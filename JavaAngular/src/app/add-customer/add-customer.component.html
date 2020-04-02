@@ -1,0 +1,21 @@
+<p>add-customer works!</p>
+<form [formGroup]="addForm">
+    <table>
+        <tr>
+            <td>Cid</td>
+            <td><input type="text" formControlName="cid" readonly></td>
+        </tr>
+        <tr>
+            <td>Fname</td>
+            <td><input type="text" formControlName="fname"></td>
+        </tr>
+        <tr>
+            <td>Lname</td>
+            <td><input type="text" formControlName="lname"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button (click)="addUpd()">Save</button></td>
+        </tr>
+    </table>
+</form>

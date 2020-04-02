@@ -1,0 +1,22 @@
+<p>show-customer works!</p>
+<a routerLink = "/add">Add</a>
+<table>
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>Fname</th>
+            <th>Lname</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let key of custList">
+            <td>{{key.cid}}</td>
+            <td>{{key.fname}}</td>
+            <td>{{key.lname}}</td>
+            <td><a routerLink = "/edit/{{key.cid}}">Edit</a></td>
+            <td><a routerLink ="" (click) = "deleteCustomer(key)">Del</a></td>
+        </tr>
+    </tbody>
+</table>
