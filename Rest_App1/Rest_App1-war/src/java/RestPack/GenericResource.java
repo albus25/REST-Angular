@@ -7,11 +7,15 @@ package RestPack;
 
 import BeanPack.CustomerBeanLocal;
 import EntityPack.*;
+import JSFBean.JassManagedBean;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.context.FacesContext;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.*;
@@ -26,6 +30,31 @@ import javax.ws.rs.core.*;
 public class GenericResource {
 
     CustomerBeanLocal customerBean = lookupCustomerBeanLocal();
+    private String username,password,temp;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getTemp() {
+        return temp;
+    }
+
+    public void setTemp(String temp) {
+        this.temp = temp;
+    }
 
     @Context
     private UriInfo context;
